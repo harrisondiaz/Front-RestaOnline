@@ -62,14 +62,21 @@ export default {
 </script>
 
 <style scoped>
-
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 10% auto;
+}
 
 .card1 {
-    width: 190px;
-    height: 254px;
     background: #f5f5f5;
     padding: 2rem 1.5rem;
-    transition: box-shadow .3s ease, transform .2s ease;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
 
 .card1-info {
@@ -77,29 +84,37 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transition: transform .2s ease, opacity .2s ease;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-/*Image*/
 .card1-avatar {
     --size: 60px;
     background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
     width: var(--size);
     height: var(--size);
     border-radius: 50%;
-    transition: transform .2s ease;
+    transition: transform 0.2s ease;
     margin-bottom: 1rem;
 }
 
+.card1-title {
+    color: #333;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+}
 
-/*Card footer*/
+.card1-subtitle {
+    color: #859ba8;
+    font-size: 0.8em;
+}
+
 .card-social {
-    transform: translateY(200%);
     display: flex;
     justify-content: space-around;
     width: 100%;
-    opacity: 0;
-    transition: transform .2s ease, opacity .2s ease;
+    margin-top: 1.5rem;
 }
 
 .card-social__item {
@@ -110,36 +125,17 @@ export default {
     display: block;
     height: 18px;
     width: 18px;
-    fill: #515F65;
+    fill: #515f65;
     cursor: pointer;
-    transition: fill 0.2s ease ,transform 0.2s ease;
+    transition: fill 0.2s ease, transform 0.2s ease;
 }
 
-/*Text*/
-.card1-title {
-    color: #333;
-    font-size: 1.5em;
-    font-weight: 600;
-    line-height: 2rem;
-}
-
-.card1-subtitle {
-    color: #859ba8;
-    font-size: 0.8em;
-}
-
-/*Hover*/
 .card1:hover {
-    box-shadow: 0 8px 50px #23232333;
+    box-shadow: 0 8px 50px rgba(35, 35, 35, 0.1);
 }
 
-.card1:hover .card1-info {
-    transform: translateY(-5%);
-}
-
-.card1:hover .card-social {
-    transform: translateY(100%);
-    opacity: 1;
+.card1:hover .card1-avatar {
+    transform: scale(1.1);
 }
 
 .card-social__item svg:hover {
@@ -147,27 +143,9 @@ export default {
     transform: scale(1.1);
 }
 
-.card1-avatar:hover {
-    transform: scale(1.1);
+@media screen and (max-width: 480px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
 }
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 1rem;
-    max-width: 1200px;
-    margin: 10% auto;
-}
-
-.left-side {
-    width: 50%;
-    padding-right: 1rem;
-}
-
-.right-side {
-    width: 50%;
-    padding-left: 1rem;
-}
-
 </style>
