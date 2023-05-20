@@ -28,7 +28,7 @@ export default {
 </script>
 
 
-<!-- Styles remain the same -->
+
 
 
 <style scoped>

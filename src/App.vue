@@ -5,7 +5,7 @@ import CookieBanner from "@/components/CookieBanner.vue";
 
 <template>
     <RouterView />
-    <cookie-banner></cookie-banner>
+
 
 </template>
 

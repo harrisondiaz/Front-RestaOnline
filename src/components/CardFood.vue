@@ -3,14 +3,14 @@
         <div class="row g-0">
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">{{ dish.name }}</h5>
+                    <h5 class="card-title">{{ dish.name}}</h5>
                     <p class="card-text">{{ dish.description }}</p>
                     <p class="card-text"><strong>{{ dish.price }}</strong></p>
 
                 </div>
             </div>
             <div class="col-md-4 d-flex align-items-stretch">
-                <img :src="dish.imageUrl" class="img-fluid rounded-end w-100 h-100" style="object-fit: cover;" :alt="dish.description" />
+                <img :src="dish.image" class="img-fluid rounded-end w-100 h-100" style="object-fit: cover;" :alt="dish.description" />
             </div>
         </div>
     </div>
@@ -26,7 +26,13 @@ export default {
         }
     },methods:{
         clicked(){
-            console.log(this.dish);
+            console.log(this.dish.id);
+          this.$router.push({
+            name: 'PlatoCompleted',
+            params: {
+              id: this.dish.id,
+            },
+          });
         }
     }
 };
