@@ -2,7 +2,7 @@
   <admin-narvar/>
   <div class="beet">
   <new-button text="Platillo" @click="goto('/admin/products/new')"/>
-  <new-button text="Adicional" @click="goto('/admin/products/new')"/>
+  <new-button text="Adicional" @click="goto('/admin/addons/new')"/>
   </div>
   <div class="container">
     <div class="row">

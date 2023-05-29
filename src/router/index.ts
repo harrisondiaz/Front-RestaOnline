@@ -11,7 +11,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('../views/Home.vue')
     },
     {
       path: '/about',
@@ -56,12 +56,16 @@ const router = createRouter({
             component: () => import("../views/ShoppingView.vue")
       },{
         path: "/admin/orders",
-            name : "AdminOrdersView",
-            component: () => import("../views/AdminOrdersView.vue")
+          name : "AdminOrdersView",
+          component: () => import("../views/AdminOrdersView.vue")
       },{
-    path: '/admin/informs',
-    name : 'AdminInformView',
-    component : () => import('../views/AdminInformView.vue')
+        path: '/admin/informs',
+        name : 'AdminInformView',
+        component : () => import('../views/AdminInformView.vue')
+      },{
+        path: '/admin/addons/new',
+        name : 'AdminAddonsNew',
+        component : () => import('../views/AdminAddonsNew.vue')
       }
 
   ]
